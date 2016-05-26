@@ -32,8 +32,8 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Iterate {@link customerIterable} with {@link Iterable#forEach} and use the {@link Consumer}
          * to finish creating the name list.
          */
-        Consumer<Object> consumer = null;
-        customerIterable.forEach(null);
+    Consumer<Customer> consumer = customer -> nameList.add(customer.getName());
+    customerIterable.forEach(consumer);
 
         assertThat(nameList.toString(), is("[Joe, Steven, Patrick, Diana, Chris, Kathy, Alice, Andrew, Martin, Amy]"));
     }
